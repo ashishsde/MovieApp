@@ -1,0 +1,27 @@
+.nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height:50px;
+}
+.search-container input{
+    border:2px solid white;
+    border-radius: 5px;
+    width:400px;
+    margin:10px;
+    padding:5px;
+    outline:none;
+}
+.search-container .search-btn{
+    background-color: rgb(248, 12, 71);
+    border:2px solid rgb(248, 12, 71);
+    border-radius:6px;
+    padding:3px;
+    margin:2px;
+    color:black;
+    font-size: 1rem;
+    cursor:pointer;
+    outline:none;
+
+}

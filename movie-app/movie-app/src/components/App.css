@@ -1,0 +1,25 @@
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(229, 226, 226);
+
+}
+
+.tabs{
+    display:flex;
+}
+.tabs .tab{
+    border:2px solid black;
+    color:black;
+    padding:4px;
+    margin:10px;
+    
+}
+
+.MoviesList{
+    width:700px;
+}
