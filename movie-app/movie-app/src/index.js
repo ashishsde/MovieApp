@@ -9,16 +9,16 @@ import reportWebVitals from './reportWebVitals';
 
 const store=createStore(movies);
 console.log("Store",store);
-console.log("state",store.getState())
-store.dispatch({
-  type:'ADD_MOVIES',
-  movies:[{name:"Superman"}]
-})
-console.log("state",store.getState())
+// console.log("state",store.getState())
+// store.dispatch({
+//   type:'ADD_MOVIES',
+//   movies:[{name:"Superman"}]
+// })
+// console.log("state",store.getState())
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App  store={store}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
