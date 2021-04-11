@@ -1,12 +1,11 @@
 
-
 .main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(229, 226, 226);
-
+    /* background-color: rgb(229, 226, 226); */
+    /* height: 800px; */
 }
 
 .tabs{
@@ -14,7 +13,7 @@
     margin-top: 20px;
 }
 .tabs .tab{
-    background-color: rgb(218, 19, 19);
+    background-color:  rgb(241, 132, 141);
     color:white;
     padding:8px;
     margin:10px;
@@ -23,6 +22,15 @@
     
 }
 
+.tabs .active-tab{
+    background-color: rgb(224, 61, 75);
+}
+.no-iteams{
+    color:rgb(160, 159, 159);
+    text-align: left;
+    margin-top: 30px;
+}
+
 .MoviesList{
-    width:700px;
+    width:900px;
 }

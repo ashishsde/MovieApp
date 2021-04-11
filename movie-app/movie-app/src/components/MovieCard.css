@@ -1,12 +1,11 @@
 .movie-card{
     display: flex;
-    width:700px;
-   
+    width:900px;
     margin-bottom: 13px;
     margin-top:13px;
     background: white;
     border-radius: 10px;
-    box-shadow: 3px 5px 2px 2px  rgb(135, 177, 144);
+    box-shadow: 3px 5px 2px 2px  rgb(86, 180, 107);
 }
 
 .left{
@@ -25,10 +24,16 @@
     font-weight: bold;
 }
 
-.footer img{
+ .unfavourite {
     margin-top:5px;
-    height:25px;
-    width:25px;
+    height:35px;
+    width:35px;
     cursor: pointer;
     
+}
+ .favourite {
+    margin-top: 5px;
+    height:35px;
+    width:35px;
+    cursor: pointer;
 }

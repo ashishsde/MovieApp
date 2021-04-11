@@ -3,31 +3,56 @@ import Navbar from './Navbar';
 import MovieCard from './MovieCard';
 import {data} from '../data';
 import './App.css';
-import {addMovies} from '../actions';
+import {addMovies, setShowFavourite} from '../actions';
 
 class App extends React.Component {
-  componentDidMount(){
+   componentDidMount(){
     const {store}=this.props;
     store.subscribe(()=>{
       console.log("UPDATED..");
       this.forceUpdate();
+      console.log("New state",this.props.store.getState());
     })
     store.dispatch(addMovies(data));
    
     console.log("State",this.props.store.getState());
+    
   }
+
+  isMovieFavourite=(movie)=>{
+    const {favourites}=this.props.store.getState();
+    
+    
+    const index=favourites.indexOf(movie);
+    if(index!==-1){
+      return true;
+    }
+    return false;
+  }
+
+onChangeTab(val){
+  this.props.store.dispatch(setShowFavourite(val))
+}
   render(){
-  const {list}=this.props.store.getState();
+  const {list,favourites,showFavourite}=this.props.store.getState();
+  const displayMovies=showFavourite ? favourites:list;
   return (
     <div className="App">
       <Navbar/>
       <div className="main">
           <div className="tabs">
-            <div className="tab">Movies</div>
-            <div className="tab">Favourites</div>
+            <div className={`tab ${showFavourite?'':'active-tab'}`} onClick={()=>this.onChangeTab(false)}>Movies</div>
+            <div className={`tab ${showFavourite?'active-tab':''}`} onClick={()=>this.onChangeTab(true)}>Favourites</div>
           </div>
-          <div className="MoviesList">{list.map((movie,index)=>(<MovieCard movie={movie} key={`movies-${index}`} />))}
+          <div className="MoviesList">{displayMovies.map((movie,index)=>(
+          <MovieCard 
+          movie={movie} 
+          key={`movies-${index}`} 
+          dispatch={this.props.store.dispatch} 
+          isFavourite={this.isMovieFavourite(movie)}
+          />))}
           </div>
+        {displayMovies.length===0?<div className="no-iteams">No iteams to display!!!</div>:null}
       </div>
     </div>
   );

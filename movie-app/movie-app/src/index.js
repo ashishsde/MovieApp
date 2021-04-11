@@ -14,7 +14,7 @@ console.log("Store",store);
 //   type:'ADD_MOVIES',
 //   movies:[{name:"Superman"}]
 // })
-// console.log("state",store.getState())
+console.log("state",store.getState())
 
 ReactDOM.render(
   <React.StrictMode>
