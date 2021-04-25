@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore} from 'redux';
 
-import movies from './reducers';
+import rootReducer from './reducers';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
-const store=createStore(movies);
+const store=createStore(rootReducer);
 console.log("Store",store);
 // console.log("state",store.getState())
 // store.dispatch({
