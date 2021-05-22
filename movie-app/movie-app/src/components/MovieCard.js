@@ -16,13 +16,13 @@ class MovieCard extends React.Component{
         return(
             <div className="movie-card">
                 <div className="left">
-                    <img alt="Poster" src={movie.Img}/>
+                    <img alt="Poster" src={movie.Poster}/>
                 </div>
                 <div className="right">
                     <div className="title">{movie.Title}</div>
-                    <div className="plot">{movie.price}</div>
+                    <div className="plot">{movie.Year}</div>
                     <div className="footer">
-                        <div className="rating">{movie.rating}</div>
+                        <div className="rating">{movie.imdbRating}</div>
                         {
                             isFavourite
                             ? <img alt="unfavourite" class="unfavourite" onClick={this.handleunFavouriteClick} src="https://thumbs.dreamstime.com/b/heart-cross-173286087.jpg"/>

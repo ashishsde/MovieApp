@@ -4,6 +4,8 @@ import MovieCard from './MovieCard';
 import {data} from '../data';
 import './App.css';
 import {addMovies, setShowFavourite} from '../actions';
+import { search } from '../reducers';
+import {StoreContext} from '../index';
 
 class App extends React.Component {
    componentDidMount(){
@@ -35,6 +37,7 @@ onChangeTab(val){
   const {movies}=this.props.store.getState(); //our state {moives:{}, search:{}} 
   const {list,favourites,showFavourite}=movies;
   const displayMovies=showFavourite ? favourites:list;
+
   return (
     <div className="App">
       <Navbar/>
@@ -55,8 +58,17 @@ onChangeTab(val){
       </div>
     </div>
   );
+  
   }
 }
 
-
-export default App;
+class AppWrapper extends React.Component{
+  render(){
+    return(
+      <StoreContext.Consumer>
+        {(store)=> <App store={store}/>}
+      </StoreContext.Consumer>
+    );
+  }
+}
+export default AppWrapper;
