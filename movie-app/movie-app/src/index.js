@@ -53,6 +53,37 @@ class Provider extends React.Component{
   }
 }
 
+//const connectedAppComponent=connect(callback)(App);
+export function connect(callback){
+  return function (Component){
+     class ConnectedComponent extends React.Component{
+      constructor(props){
+        super(props);
+        this.unsubscribe=this.props.store.subscribe(()=>this.forceUpdate());  //It will update or refresh whenver the state changes
+      }
+      componentWillUnmount(){
+        this.unsubscribe();
+      }
+      render(){
+        const {store}=this.props;
+        const state=store.getState();
+        const dataToBePassedAsProps=callback(state);
+        return <Component {...dataToBePassedAsProps} dispatch={store.dispatch} />; // we use 3 dot because of spreading properties it will pass as movie={movie} search={search}
+      }
+    }
+    class ConnectedComponentWrapper extends React.Component{     //why we doing these because our constructer wants access to the store
+      render(){
+        return(
+          <StoreContext.Consumer>
+            {(store)=><ConnectedComponent store={store}/>}
+          </StoreContext.Consumer>
+        );
+      }
+    }
+    return ConnectedComponentWrapper;
+  }
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
