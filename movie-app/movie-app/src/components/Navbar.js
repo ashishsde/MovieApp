@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { connect } from '..';
-import {data} from '../data';
+import { connect } from 'react-redux';
 import { handleMovieSearch ,addMovieToList} from '../actions';
 import './Navbar.css';
 

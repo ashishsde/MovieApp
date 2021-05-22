@@ -60,6 +60,7 @@
     border: none;
     padding: 9px 4px;
     border-radius: 5px;
+    cursor: pointer;
   }
   .search-result {
     display: flex;

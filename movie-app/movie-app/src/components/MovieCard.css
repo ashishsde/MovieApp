@@ -14,7 +14,7 @@
 }
 .left img{
     height:180px;
-    width:100px;
+    width:130px;
 }
 .right{
     margin:10px;
@@ -24,16 +24,23 @@
     font-weight: bold;
 }
 
- .unfavourite {
-    margin-top:5px;
-    height:35px;
-    width:35px;
-    cursor: pointer;
-    
+ .unfavourite-btn {
+    background:rgb(206, 3, 3);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    padding: 9px 4px;
+    border-radius: 5px;
+    cursor:pointer;
 }
- .favourite {
-    margin-top: 5px;
-    height:35px;
-    width:35px;
-    cursor: pointer;
+ .favourite-btn {
+    background:rgb(10, 177, 10);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    padding: 9px 4px;
+    border-radius: 5px;
+    cursor:pointer;
 }
